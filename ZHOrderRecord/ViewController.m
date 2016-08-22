@@ -23,6 +23,7 @@ static NSString *const kButtonStatus = @"buttonStatus";
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) BOOL isOpen;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -34,12 +35,23 @@ static NSString *const kButtonStatus = @"buttonStatus";
     self.automaticallyAdjustsScrollViewInsets = NO;
  
     [self createDataArray];
+    
+    [self.refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)handleRefresh:(UIRefreshControl *)sender
+{
+    // 模拟数据请求
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    });
 }
 
 - (void)createDataArray
 {
     for (NSInteger i = 0; i < 6; i++) {
-        ZHMyOrderModel *item = [ZHMyOrderModel modelWithPayTime:[NSString stringWithFormat:@"2016-07-18 15:55:5%ld", i] payAmount:[NSString stringWithFormat:@"￥2016(%ld)", i] payStatus:i % 2 ? YES : NO];
+        ZHMyOrderModel *item = [ZHMyOrderModel modelWithPayTime:[NSString stringWithFormat:@"2016-07-18 15:55:5%ld", i] payAmount:[NSString stringWithFormat:@"￥2016%ld", i] payStatus:i % 2 ? YES : NO];
         [self.dataArray addObject:item];
     }
     [self.tableView reloadData];
@@ -118,9 +130,9 @@ static NSString *const kButtonStatus = @"buttonStatus";
         button.frame = CGRectMake(0, 0, UISCREEN_WIDTH, kCellHeight);
         UIImage *normalImage;
         if (self.isOpen) {
-            normalImage = [UIImage imageNamed:@"up"];
+            normalImage = [UIImage imageNamed:@"order_detail_down"];
         } else {
-            normalImage = [UIImage imageNamed:@"down"];
+            normalImage = [UIImage imageNamed:@"order_detail_up"];
         }
         
         [button setImage:normalImage forState:UIControlStateNormal];
@@ -176,6 +188,15 @@ static NSString *const kButtonStatus = @"buttonStatus";
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+- (UIRefreshControl *)refreshControl
+{
+    if (!_refreshControl) {
+        _refreshControl = [[UIRefreshControl alloc] init];
+        [self.tableView addSubview:self.refreshControl];
+    }
+    return _refreshControl;
 }
 
 - (void)didReceiveMemoryWarning {
