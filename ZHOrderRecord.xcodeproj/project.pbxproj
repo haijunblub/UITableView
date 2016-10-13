@@ -18,6 +18,7 @@
 		848064511D3C8900003E5BC3 /* ZHMyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480644D1D3C8900003E5BC3 /* ZHMyOrderModel.m */; };
 		848064521D3C8900003E5BC3 /* ZHOrderRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480644F1D3C8900003E5BC3 /* ZHOrderRecordCell.m */; };
 		848064531D3C8900003E5BC3 /* ZHOrderRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848064501D3C8900003E5BC3 /* ZHOrderRecordCell.xib */; };
+		84CCE1621DAF6323005C7FB0 /* UITableView折叠.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84CCE1611DAF6323005C7FB0 /* UITableView折叠.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		8480644E1D3C8900003E5BC3 /* ZHOrderRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHOrderRecordCell.h; sourceTree = "<group>"; };
 		8480644F1D3C8900003E5BC3 /* ZHOrderRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOrderRecordCell.m; sourceTree = "<group>"; };
 		848064501D3C8900003E5BC3 /* ZHOrderRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHOrderRecordCell.xib; sourceTree = "<group>"; };
+		84CCE1611DAF6323005C7FB0 /* UITableView折叠.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "UITableView折叠.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		848064191D3C88C8003E5BC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84CCE1611DAF6323005C7FB0 /* UITableView折叠.gif */,
 				8480641A1D3C88C8003E5BC3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848064291D3C88C8003E5BC3 /* LaunchScreen.storyboard in Resources */,
+				84CCE1621DAF6323005C7FB0 /* UITableView折叠.gif in Resources */,
 				848064261D3C88C8003E5BC3 /* Assets.xcassets in Resources */,
 				848064241D3C88C8003E5BC3 /* Main.storyboard in Resources */,
 				848064531D3C8900003E5BC3 /* ZHOrderRecordCell.xib in Resources */,
@@ -514,6 +518,7 @@
 				848064451D3C88C8003E5BC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		848064461D3C88C8003E5BC3 /* Build configuration list for PBXNativeTarget "ZHOrderRecordTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				848064481D3C88C8003E5BC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		848064491D3C88C8003E5BC3 /* Build configuration list for PBXNativeTarget "ZHOrderRecordUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				8480644B1D3C88C8003E5BC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
